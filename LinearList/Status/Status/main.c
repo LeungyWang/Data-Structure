@@ -1,14 +1,12 @@
 //
 //  main.c
-//  01 SequenceList
+//  Status
 //
-//  Created by leung on 2021/10/17.
+//  Created by leung on 2021/10/19.
 //
 
 #include <stdio.h>
-#include "SequenceList.h"
 
 int main(int argc, const char * argv[]) {
-    SqList L;
     return 0;
 }

@@ -1,12 +1,12 @@
 <!--
  * @Author: leung
  * @Date: 2021-10-17 17:47:27
- * @LastEditTime: 2021-10-18 13:34:04
+ * @LastEditTime: 2021-10-19 12:50:39
  * @LastEditors: leung
  * @Description: 
 -->
 # Data-Structure
-Data-Structure Study Notes
+《大话数据结构》学习笔记
 
 ## 01-线性表
 **广义**
