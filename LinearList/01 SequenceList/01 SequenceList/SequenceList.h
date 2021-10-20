@@ -23,6 +23,6 @@ typedef struct {
 
 Status InitList(SqList *L);
 Status ListEmpty(SqList L);
-Status GetElem(SqList L, int i, ElemType *e);
 
+Status GetElem(SqList L, int i, ElemType *e);
 #endif /* SequenceList_h */
