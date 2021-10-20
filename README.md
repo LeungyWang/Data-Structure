@@ -1,7 +1,7 @@
 <!--
  * @Author: leung
  * @Date: 2021-10-17 17:47:27
- * @LastEditTime: 2021-10-19 13:55:04
+ * @LastEditTime: 2021-10-20 13:13:03
  * @LastEditors: leung
  * @Description: 
 -->
@@ -25,7 +25,7 @@ Operation
     ListEmpty(L):  若线性表为空, 返回true, 否则返回false.
     ClearList(*L): 将线性表清空.
     GetElem(L, i, *e):  将线性表L中的第i个位置元素值返回给e.
-    LocalElem(L, e):  在线性表L中查找与给定值e相等的元素, 如果查找成功, 返回该元素在表中序号表示成功;否则, 返回0表示失败.
+    LocateElem(L, e):  在线性表L中查找与给定值e相等的元素, 如果查找成功, 返回该元素在表中序号表示成功;否则, 返回0表示失败.
     ListInsert(*L, i, e):  在线性表L中的第i个位置插入新元素e.
     ListDelete(*L, i, *e): 删除线性表L中第i个位置元素, 并用e返回其值.
     ListLength(L): 返回线性表L中的元素个数.
