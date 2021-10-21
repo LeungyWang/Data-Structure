@@ -12,7 +12,7 @@ Function:  InitList
 Description:  初始化顺序存储结构线性表
 Input:
     (SqList)    *L
-Return: (boolean)   函数执行状态码,
+Return: (int)   函数执行状态码,
               1为成功, 0为失败
 *************************************************/
 Status InitList(SqList *L){
@@ -25,10 +25,9 @@ Function: ListEmpty
 Description: 判断顺序存储结构线性表是否为空
 Input:
     (SqList)    L
-Return:(boolean)    函数执行状态码,
-              1为为空, 0为不为空
+Return:(int)    1为为空, 0为不为空
 *************************************************/
-Status ListEmpty(SqList L){
+int ListEmpty(SqList L){
     if (L.length == 0)
         return TRUE;
     else
@@ -40,7 +39,7 @@ Function: ClearList
 Description: 清空顺序结构线性表
 Input:
     (SqList)    L
-Return:(boolean)    函数执行状态码,
+Return:(int)    函数执行状态码,
               1为成功, 0为失败
 *************************************************/
 
@@ -57,7 +56,7 @@ Input:
     (SqList)    L
     (int)           i
     (ElemType)      *e
-Return:(boolean)    函数执行状态码,
+Return:(int)    函数执行状态码,
               1为成功, 0为失败
 *************************************************/
 Status GetElem(SqList L, int i, ElemType *e)
@@ -75,7 +74,7 @@ Description: 获取顺序结构线性表中第一个与元素
 Input:
     (SqList)    L
     (ElemType)      e
-Return:(boolean)    元素e在线性表中的位置，
+Return:(int)    元素e在线性表中的位置，
               不存在即返回0
 *************************************************/
 int LocateElem(SqList L, ElemType e)
@@ -94,7 +93,7 @@ Input:
     (SqList)    *L
     (Int)           i
     (ElemType)      e
-Return:(boolean)    函数执行状态码,
+Return:(int)    函数执行状态码,
               1为成功, 0为失败
 **************************************************/
 Status ListInsert(SqList *L, int i, ElemType e)
@@ -114,4 +113,44 @@ Status ListInsert(SqList *L, int i, ElemType e)
     L->data[i-1] = e;   /*新元素插入*/
     L->length++;
     return  OK;
+}
+
+/*************************************************
+Function: ListDelete
+Description: 删除线性表L中第i个位置元素, 并用e返回其值.
+Input:
+    (SqList)    *L
+    (Int)           i
+    (ElemType)      *e
+Return:(int)    函数执行状态码,
+          1为成功, 0为失败
+**************************************************/
+
+Status ListDelete(SqList *L, int i, ElemType *e)
+{
+    int k;
+    if (L->length == 0)   /*线性表为空*/
+        return  ERROR;
+    if (i < 1 || i > L->length + 1) /*删除位置不正确*/
+        return  ERROR;
+    *e = L->data[i-1];
+    if (i<L->length) {  /*如果删除的不是最后位置*/
+        for (k=i-1; k<L->length-1; k++) {
+            L->data[k] = L->data[k+1];  /*将删除位置后继元素前移*/
+        }
+    }
+    L->length--;
+    return  OK;
+}
+
+/*************************************************
+Function: ListLength
+Description: 返回线性表L中的元素个数
+Input:
+    (SqList)    *L
+Return:(int)    元素个数
+**************************************************/
+int ListLength(SqList L)
+{
+    return  L.length;
 }
