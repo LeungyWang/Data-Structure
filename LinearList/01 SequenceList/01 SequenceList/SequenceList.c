@@ -13,7 +13,7 @@ Description:  初始化顺序存储结构线性表
 Input:
     (SqList)    *L
 Return: (int)   函数执行状态码,
-              1为成功, 0为失败
+          1为成功, 0为失败
 *************************************************/
 Status InitList(SqList *L){
     (*L).length = 0;
@@ -40,7 +40,7 @@ Description: 清空顺序结构线性表
 Input:
     (SqList)    L
 Return:(int)    函数执行状态码,
-              1为成功, 0为失败
+          1为成功, 0为失败
 *************************************************/
 
 Status ClearList(SqList *L)
@@ -94,7 +94,7 @@ Input:
     (Int)           i
     (ElemType)      e
 Return:(int)    函数执行状态码,
-              1为成功, 0为失败
+          1为成功, 0为失败
 **************************************************/
 Status ListInsert(SqList *L, int i, ElemType e)
 {
