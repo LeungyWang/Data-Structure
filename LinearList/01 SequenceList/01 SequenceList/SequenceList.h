@@ -25,5 +25,8 @@ Status InitList(SqList *L);
 Status ListEmpty(SqList L);
 Status ListInsert(SqList *L, int i, ElemType e);
 Status GetElem(SqList L, int i, ElemType *e);
+Status ListDelete(SqList *L, int i, ElemType *e);
+Status ClearList(SqList *L);
 int LocateElem(SqList L, ElemType e);
+int ListLength(SqList L);
 #endif /* SequenceList_h */

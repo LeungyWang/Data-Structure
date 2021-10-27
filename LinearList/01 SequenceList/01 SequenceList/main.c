@@ -77,7 +77,34 @@ int main(int argc, const char * argv[]) {
     }
     printf("\n***********05-LocateElem-TEST-END***********\n\n");
     
+    printf("\n***********06-ListLength-TEST-BEGIN***********\n");     // 06.函数ListLength测试
+    {
+        ret = ListLength(L);
+        printf("\n线性表L长度为%d\n\n", ret);
+    }
+    printf("\n***********06-ListLength-TEST-END***********\n\n");
     
+    printf("\n***********07-ListDelete-TEST-BEGIN***********\n");     // 07.函数ListDelete测试
+    {
+        ret = ListDelete(&L, i, &e);
+        if (ret == ERROR) {
+            printf("\n线性表删除位置%d元素失败",i);
+        }else{
+            printf("\n删除线性表L位置%d元素成功, 元素为%d\n", i, e);
+        }
+    }
+    printf("\n***********07-ListDelete-TEST-END***********\n\n");
+    
+    
+    printf("\n***********08-ClearList-TEST-BEGIN***********\n");     // 08.函数ClearList测试
+    {
+        ret = ClearList(&L);
+        if (ret == OK) {
+            printf("\n清空线性表L成功\n");
+        }
+    }
+    printf("\n***********08-ClearList-TEST-END***********\n\n");
+
     return 0;
     
 }

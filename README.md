@@ -1,7 +1,7 @@
 <!--
  * @Author: leung
  * @Date: 2021-10-17 17:47:27
- * @LastEditTime: 2021-10-20 13:13:03
+ * @LastEditTime: 2021-10-26 13:32:36
  * @LastEditors: leung
  * @Description: 
 -->
@@ -39,3 +39,15 @@ endADT
 
 线性表的顺序存储示意图
 ![SeqList](https://img-blog.csdnimg.cn/20200712095506538.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MTA0OTE4OA==,size_16,color_FFFFFF,t_70)
+
+### 线性表的链式存储结构
+
+**定义**
+> 把存储数据元素信息的域称为数据域, 把存储直接后继位置的域称为指针域, 指针域中存储的信息称作指针或链。这两部分信息组成数据元素ai的存储映像, 称为结点Node
+> 
+> n个结点链结成一个链表, 即为线性表的链式存储结构, 因为此链表的每一个结点中只包含一个指针域, 所以叫做单链表。
+> 
+> 链表中第一个结点的存储位置叫做头指针
+
+线性表的链式存储示意图
+![LinkList](https://www.dynamic-zheng.com/images/2019/%E5%8D%95%E9%93%BE%E8%A1%A8.jpg)
