@@ -33,7 +33,7 @@ Return:(int)    1为为空, 0为不为空
 *************************************************/
 Status LinkListEmpty(LinkList L){
     if (L!=NULL && L->next==NULL) {
-        return TRUE
+        return TRUE;
     }else{
         return FALSE;
     }
@@ -76,7 +76,7 @@ Status GetLinkListElem(LinkList L, int i, ElemType *e){
     j = 1;          /*j为计数器*/
     while (p && j < i) {
         p = p->next;
-        ++j
+        ++j;
     }
     if (!p || j>i) {
         return ERROR;   /*第i个结点不存在*/
@@ -85,3 +85,45 @@ Status GetLinkListElem(LinkList L, int i, ElemType *e){
     return  OK;
     
 }
+
+/*************************************************
+Function: LocateLinkListElem
+Description: 获取链式结构线性表中第一个与元素
+         e相同的元素位置, 元素位置从1开始
+Input:
+    (LinkList)    L
+    (ElemType)      e
+Return:(int)    元素e在线性表中的位置，
+              不存在即返回0
+*************************************************/
+int LocateLinkListElem(LinkList L, ElemType e)
+{
+    int j;
+    LinkList p;
+    p = L->next;
+    j = 0;
+    if (p==NULL) {  // 链表不存在结点
+        return ERROR;
+    }
+    while (p!=NULL) {
+        j++;
+        if (p->data == e) {
+            return j;
+        }
+        p=p->next;
+    }
+    // 链表中不存在元素e 返回ERROR
+    return  ERROR;
+}
+
+/*************************************************
+Function: LinkListInsert
+Description: 在链式结构线性表L中的第i个位置插入新元素e.
+Input:
+    (LinkList)    *L
+    (Int)           i
+    (ElemType)      e
+Return:(int)    函数执行状态码,
+          1为成功, 0为失败
+**************************************************/
+
