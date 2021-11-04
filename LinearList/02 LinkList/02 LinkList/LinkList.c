@@ -126,7 +126,7 @@ Input:
 Return:(int)    函数执行状态码,
           1为成功, 0为失败
 **************************************************/
-Status ListInsert(LinkList *L, int i, ElemType e)
+Status LinkListInsert(LinkList *L, int i, ElemType e)
 {
     int j;
     LinkList p,s;

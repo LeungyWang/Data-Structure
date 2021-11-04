@@ -20,4 +20,8 @@ typedef struct Node{
 }Node;
 typedef struct Node *LinkList; /*定义LinkList*/
 
+Status InitLinkList(LinkList *L);
+Status LinkListInsert(LinkList *L, int i, ElemType e);
+Status GetLinkListElem(LinkList L, int i, ElemType *e);
+int LocateLinkListElem(LinkList, ElemType e);
 #endif /* LinkList_h */
