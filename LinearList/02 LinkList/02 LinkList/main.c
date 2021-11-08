@@ -54,7 +54,7 @@ int main(int argc, const char * argv[]) {
     }
     printf("\n***********03-GetLinkListElem-TEST-END***********\n\n");
 
-    printf("\n***********04-LocateLinkListElem-TEST-BEGIN***********\n");     // 05.函数LocateElem测试
+    printf("\n***********04-LocateLinkListElem-TEST-BEGIN***********\n");     // 04.函数LocateLinkListElem测试
     {
         ret = LocateLinkListElem(L, e);
         if (ret == ERROR) {
@@ -66,5 +66,54 @@ int main(int argc, const char * argv[]) {
     }
     printf("\n***********04-LocateLinkListElem-TEST-END***********\n\n");
 
+    printf("\n***********05-LinkListLength-TEST-BEGIN***********\n");     // 05.函数LinkListLength测试
+    {
+        ret = LinkListLength(L);
+        printf("\n链式结构线性表L长度为%d\n\n", ret);
+    }
+    printf("\n***********05-LinkListLength-TEST-END***********\n\n");
+
+    printf("\n***********06-LinkListDelete-TEST-BEGIN***********\n");     // 06.函数LinkListDelete测试
+    {
+        ret = LinkListDelete(&L, i, &e);
+        if (ret == ERROR) {
+            printf("\n链式结构线性表删除位置%d元素失败",i);
+        }else{
+            printf("\n删除线性表L位置%d元素成功, 元素为%d\n", i, e);
+        }
+    }
+    printf("\n***********06-LinkListDelete-TEST-END***********\n\n");
+
     
+    printf("\n***********07-ClearLinkList-TEST-BEGIN***********\n");     // 07.函数ClearLinkList测试
+    {
+        ret = ClearLinkList(&L);
+        if (ret == OK) {
+            printf("\n清空链式结构线性表L成功\n");
+        }
+    }
+    printf("\n***********07-ClearLinkList-TEST-END***********\n\n");
+
+    printf("\n***********08-LinkListEmpty-TEST-BEGIN***********\n");     // 08.函数LinkListEmpty测试
+    {
+        int empty = LinkListEmpty(L);
+        if (empty) {
+            printf("\n线性表为空\n");
+        }else{
+                printf("\n线性表不为空");
+        }
+    }
+    printf("\n***********08-LinkListEmpty-TEST-END***********\n\n");
+    
+    printf("\n***********09-CreateListHead-TEST-BEGIN***********\n");     // 09.函数CreateListHead测试
+    {
+        int n;
+        n = 10;
+        CreateListHead(&L, n);  // 产生10个随机数, 插入L
+//        for (int i=1; i<=n; i++) {
+//            statements
+//        }
+        
+    }
+    printf("\n***********09-CreateListHead-TEST-END***********\n\n");
 }

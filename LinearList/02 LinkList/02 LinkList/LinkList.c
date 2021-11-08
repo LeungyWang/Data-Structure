@@ -178,6 +178,26 @@ Status LinkListDelete(LinkList *L, int i, ElemType *e)
 }
 
 /*************************************************
+Function: ListLength
+Description: 返回链式结构线性表L中的元素个数
+Input:
+    (LinkList)    L
+Return:(int)    元素个数
+**************************************************/
+int LinkListLength(LinkList L)
+{
+    int i;
+    LinkList p;
+    p = L;
+    i = 0;
+    while (p->next) {
+        i++;
+        p = p->next;
+    }
+    return i;
+}
+
+/*************************************************
 Function: CreateListHead
 Description: 随机产生n个元素的值, 建立
          带表头结点的单链线性表L(头插法)
