@@ -110,10 +110,28 @@ int main(int argc, const char * argv[]) {
         int n;
         n = 10;
         CreateListHead(&L, n);  // 产生10个随机数, 插入L
-//        for (int i=1; i<=n; i++) {
-//            statements
-//        }
+        for (int i=1; i<=n; i++) {
+            GetLinkListElem(L, i, &e);
+            printf("\n链式结构线性表第%d个元素为%d",i,e);
+        }
+        ClearLinkList(&L);
         
     }
     printf("\n***********09-CreateListHead-TEST-END***********\n\n");
+    
+    printf("\n***********10-CreateListTail-TEST-BEGIN***********\n");     // 10.函数CreateListTail测试
+    {
+        int n;
+        n = 10;
+        CreateListTail(&L, n);  // 产生10个随机数, 插入L
+        for (int i=1; i<=n; i++) {
+            GetLinkListElem(L, i, &e);
+            printf("\n链式结构线性表第%d个元素为%d",i,e);
+        }
+        ClearLinkList(&L);
+        
+    }
+    printf("\n***********10-CreateListTail-TEST-END***********\n\n");
 }
+
+

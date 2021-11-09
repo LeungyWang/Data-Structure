@@ -30,4 +30,5 @@ Status LinkListEmpty(LinkList L);
 int LocateLinkListElem(LinkList, ElemType e);
 int LinkListLength(LinkList L);
 void CreateListHead(LinkList *L, n);
+void CreateListTail(LinkList *L, n);
 #endif /* LinkList_h */

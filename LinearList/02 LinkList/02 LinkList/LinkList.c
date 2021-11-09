@@ -214,7 +214,9 @@ void CreateListHead(LinkList *L, int n)
     (*L)->next = NULL;  /*先建立一个带头结点的单链表*/
     for (i=0; i<n; i++) {
         p = (LinkList)malloc(sizeof(Node)); /*随机生成100以内的数字*/
-        p->data = rand()%100 + 1;
+        int r;
+        r = rand()%100 + 1;
+        p->data = r;
         p->next = (*L)->next;
         (*L)->next = p;     /*插入到表头*/
     }
@@ -237,7 +239,9 @@ void CreateListTail(LinkList *L, int n)
     r = *L;     /*r为指向尾部的结点*/
     for (i=0; i<n; i++) {
         p = (Node *)malloc(sizeof(Node));   /*生成新结点*/
-        p->data = rand()%100 + 1;       /*随机生成100以内的数字*/
+        int rd;
+        rd = rand()%100 + 1;
+        p->data = rd;      /*随机生成100以内的数字*/
         r->next = p;        /*将表尾终端结点的指针指向新结点*/
         r = p;      /*将当前的新结点定义为表尾终端结点*/
     }
