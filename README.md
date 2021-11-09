@@ -1,7 +1,7 @@
 <!--
  * @Author: leung
  * @Date: 2021-10-17 17:47:27
- * @LastEditTime: 2021-10-26 13:32:36
+ * @LastEditTime: 2021-11-09 13:06:57
  * @LastEditors: leung
  * @Description: 
 -->
@@ -51,3 +51,8 @@ endADT
 
 线性表的链式存储示意图
 ![LinkList](https://www.dynamic-zheng.com/images/2019/%E5%8D%95%E9%93%BE%E8%A1%A8.jpg)
+
+
+### 静态链表
+定义
+> 让数组中的元素由两个数据域组成，data和cur。数组中的每个下标都对应一个data和一个cur。数据域data，用来存放数据元素；而cur相当于单链表中的next指针，存放该元素的后继在数组中的下标。cur也叫做那个游标。这种使用数组描述的链表叫做静态链表。
