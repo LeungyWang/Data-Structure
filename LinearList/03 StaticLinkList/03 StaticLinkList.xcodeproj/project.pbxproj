@@ -7,7 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3DF01CA4273B86EB00127D65 /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = 3DF01CA3273B86EB00127D65 /* main.c */; };
+		3DF01CA4273B86EB00127D65 /* StaticLinkList-main.c in Sources */ = {isa = PBXBuildFile; fileRef = 3DF01CA3273B86EB00127D65 /* StaticLinkList-main.c */; };
+		3DF01CB0273B8B5100127D65 /* StaticLinkList.c in Sources */ = {isa = PBXBuildFile; fileRef = 3DF01CAF273B8B5100127D65 /* StaticLinkList.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -24,7 +25,9 @@
 
 /* Begin PBXFileReference section */
 		3DF01CA0273B86EB00127D65 /* 03 StaticLinkList */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "03 StaticLinkList"; sourceTree = BUILT_PRODUCTS_DIR; };
-		3DF01CA3273B86EB00127D65 /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
+		3DF01CA3273B86EB00127D65 /* StaticLinkList-main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = "StaticLinkList-main.c"; sourceTree = "<group>"; };
+		3DF01CAE273B8B5100127D65 /* StaticLinkList.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StaticLinkList.h; sourceTree = "<group>"; };
+		3DF01CAF273B8B5100127D65 /* StaticLinkList.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = StaticLinkList.c; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,7 +60,9 @@
 		3DF01CA2273B86EB00127D65 /* 03 StaticLinkList */ = {
 			isa = PBXGroup;
 			children = (
-				3DF01CA3273B86EB00127D65 /* main.c */,
+				3DF01CA3273B86EB00127D65 /* StaticLinkList-main.c */,
+				3DF01CAE273B8B5100127D65 /* StaticLinkList.h */,
+				3DF01CAF273B8B5100127D65 /* StaticLinkList.c */,
 			);
 			path = "03 StaticLinkList";
 			sourceTree = "<group>";
@@ -118,7 +123,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3DF01CA4273B86EB00127D65 /* main.c in Sources */,
+				3DF01CA4273B86EB00127D65 /* StaticLinkList-main.c in Sources */,
+				3DF01CB0273B8B5100127D65 /* StaticLinkList.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
