@@ -50,14 +50,14 @@ Input:
     (StaticLinkList)    L
 Return:(int)    元素个数
 **************************************************/
-int StaticLinkListLength(StaticLinkList space)
+int StaticLinkListLength(StaticLinkList L)
 {
     int k;
     k = 0;
-    int i = space[MAXSIZE-1].cur;   /*获得第一个结点的位置*/
-    while (space[i].cur) {
+    int i = L[MAXSIZE-1].cur;   /*获得第一个结点的位置*/
+    while (i) {
         k++;
-        i = space[i].cur;
+        i = L[i].cur;
     }
     return k;
 }
@@ -73,14 +73,61 @@ Input:
 Return:(int)    函数执行状态码,
           1为成功, 0为失败
 **************************************************/
-Status StaticLinkListInsert(StaticLinkList space)
+Status StaticLinkListInsert(StaticLinkList L, int i, ElemType e)
 {
     int j, k, l;
     k = MAXSIZE - 1     /*注意k首先是最后一个元素的下标*/
-    if (i < 1 || ) {
-        <#statements#>
+    if (i < 1 || i > StaticLinkListInsert(L) + 1) {
+        return  ERROR;
     }
-    
-    
+    j = Malloc_SLL(L);
+    if (j) {
+        L[j].data = e;
+        for (l=1;l<=i-1;l++) {
+            k = L[k].cur;
+        }
+        L[j].cur = L[k].cur;
+        L[k].cur = j;
+        return OK;
+    }
+    return ERROR;
 }
 
+/*************************************************
+Function: StaticLinkListDelete
+Description: 删除在静态链表中第i个数据元素e
+ 
+Input:
+    (StaticLinkList)    L
+    (Int)           i
+Return:(int)    函数执行状态码,
+          1为成功, 0为失败
+**************************************************/
+Status StaticLinkListDelete(StaticLinkList L, int i)
+{
+    int j, k;
+    if (i < 1 || i > StaticLinkListLength(L)) {
+        return  ERROR;
+    }
+    k = MAXSIZE - 1;
+    for (j = 1; j <= i - 1; j++) {
+        k = L[k].cur;
+    }
+    j = L[k].cur;
+    L[k].cur = L[j].cur;
+    Free_SSL(L, j);
+    return OK;
+}
+
+/*************************************************
+Function:  Free_SLL
+Description: 模拟动态链表的结点释放
+Input:
+    (StaticLinkList)    space
+Return: (int)   分配的结点下标
+*************************************************/
+void Free_SSL(StaticLinkList space, int k)
+{
+    space[k].cur = space[0].cur;    /*把第一个元素cur值赋给要删除的分量cur*/
+    space[0].cur = k;   /*把要删除的分量下标赋值给第一个元素的cur*/
+}
