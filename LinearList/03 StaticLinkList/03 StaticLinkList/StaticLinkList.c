@@ -44,6 +44,60 @@ int Malloc_SLL(StaticLinkList space)
 }
 
 /*************************************************
+Function: StaticLinkListEmpty
+Description: 判断静态链表L是否为空
+Input:
+    (StaticLinkList)    L
+Return:(int)    1为为空, 0为不为空
+*************************************************/
+Status StaticLinkListIsEmpty(StaticLinkList L)
+{
+    if (L[MAXSIZE-1].cur == 0) {
+        return TRUE;
+    }else{
+        return FALSE;
+    }
+}
+
+/*************************************************
+Function: ClearStaticLinkList
+Description: 清空链式结构线性表
+Input:
+    (StaticLinkList)    *L
+Return:(int)    函数执行状态码,
+          1为成功, 0为失败
+*************************************************/
+Status ClearStaticLinkList(StaticLinkList L)
+{
+    InitStaticLinkList(L);
+}
+
+/*************************************************
+Function: GeStatictLinkListElem
+Description: 获取静态链表中第i个元素, 并赋值到e
+Input:
+    (StaticLinkList)    L
+    (int)           i
+    (ElemType)      *e
+Return:(int)    函数执行状态码,
+          1为成功, 0为失败
+*************************************************/
+Status GetStaticLinkListElem(StaticLinkList L, int i, ElemType *e)
+{
+    int j = L[MAXSIZE-1].cur;
+    for (int k=1; k<i; k++) {
+        j = L[j].cur;
+    }
+    if (!j) {
+        return ERROR;   /*第i个结点不存在*/
+    }else{
+        *e = L[j].data;
+    }
+    return OK;
+}
+
+
+/*************************************************
 Function: StaticLinkListLength
 Description: 返回静态链表中的元素个数
 Input:
@@ -124,6 +178,7 @@ Function:  Free_SLL
 Description: 模拟动态链表的结点释放
 Input:
     (StaticLinkList)    space
+    (int) k
 Return: (int)   分配的结点下标
 *************************************************/
 void Free_SSL(StaticLinkList space, int k)
