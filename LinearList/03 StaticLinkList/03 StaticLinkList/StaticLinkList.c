@@ -22,6 +22,7 @@ Status InitStaticLinkList(StaticLinkList space)
         space[i].cur = i + 1;
     }
     space[MAXSIZE-1].cur = 0;   /*目前静态链表为空, 最后一个元素的cur为0*/
+    return OK;
 }
 
 /*************************************************
@@ -60,19 +61,6 @@ Status StaticLinkListIsEmpty(StaticLinkList L)
 }
 
 /*************************************************
-Function: ClearStaticLinkList
-Description: 清空链式结构线性表
-Input:
-    (StaticLinkList)    *L
-Return:(int)    函数执行状态码,
-          1为成功, 0为失败
-*************************************************/
-Status ClearStaticLinkList(StaticLinkList L)
-{
-    InitStaticLinkList(L);
-}
-
-/*************************************************
 Function: GeStatictLinkListElem
 Description: 获取静态链表中第i个元素, 并赋值到e
 Input:
@@ -94,6 +82,32 @@ Status GetStaticLinkListElem(StaticLinkList L, int i, ElemType *e)
         *e = L[j].data;
     }
     return OK;
+}
+
+/*************************************************
+Function: LocateStaticLinkListElem
+Description: 获取静态链表中第一个与元素
+         e相同的元素位置, 元素位置从1开始
+Input:
+    (StaticLinkList)    L
+    (ElemType)      e
+Return:(int)    元素e在线性表中的位置，
+              不存在即返回0
+*************************************************/
+int LocateStaticLinkListElem(StaticLinkList L, ElemType e)
+{
+    int k;
+    int j = L[MAXSIZE-1].cur;
+    k = 0;
+    while (j) {
+        k++;
+        if (L[j].data == e) {
+            return j;
+        }
+        j = L[j].cur;
+    }
+    // 静态链表中不存在元素e 返回ERROR
+    return ERROR;
 }
 
 
@@ -130,8 +144,8 @@ Return:(int)    函数执行状态码,
 Status StaticLinkListInsert(StaticLinkList L, int i, ElemType e)
 {
     int j, k, l;
-    k = MAXSIZE - 1     /*注意k首先是最后一个元素的下标*/
-    if (i < 1 || i > StaticLinkListInsert(L) + 1) {
+    k = MAXSIZE - 1;   /*注意k首先是最后一个元素的下标*/
+    if (i < 1 || i > StaticLinkListLength(L) + 1) {
         return  ERROR;
     }
     j = Malloc_SLL(L);
@@ -145,6 +159,20 @@ Status StaticLinkListInsert(StaticLinkList L, int i, ElemType e)
         return OK;
     }
     return ERROR;
+}
+
+/*************************************************
+Function:  Free_SLL
+Description: 模拟动态链表的结点释放
+Input:
+    (StaticLinkList)    space
+    (int) k
+Return: (int)   分配的结点下标
+*************************************************/
+void Free_SSL(StaticLinkList space, int k)
+{
+    space[k].cur = space[0].cur;    /*把第一个元素cur值赋给要删除的分量cur*/
+    space[0].cur = k;   /*把要删除的分量下标赋值给第一个元素的cur*/
 }
 
 /*************************************************
@@ -171,18 +199,4 @@ Status StaticLinkListDelete(StaticLinkList L, int i)
     L[k].cur = L[j].cur;
     Free_SSL(L, j);
     return OK;
-}
-
-/*************************************************
-Function:  Free_SLL
-Description: 模拟动态链表的结点释放
-Input:
-    (StaticLinkList)    space
-    (int) k
-Return: (int)   分配的结点下标
-*************************************************/
-void Free_SSL(StaticLinkList space, int k)
-{
-    space[k].cur = space[0].cur;    /*把第一个元素cur值赋给要删除的分量cur*/
-    space[0].cur = k;   /*把要删除的分量下标赋值给第一个元素的cur*/
 }

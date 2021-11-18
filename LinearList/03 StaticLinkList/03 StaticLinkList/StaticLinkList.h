@@ -20,5 +20,6 @@ typedef struct
     int cur;    /*游标(Cursor), 为0时表示无指向*/
 }Component, StaticLinkList[MAXSIZE];
 
+Status InitStaticLinkList(StaticLinkList space);
 int StaticLinkListLength(StaticLinkList space);
 #endif /* StaticLinkList_h */
