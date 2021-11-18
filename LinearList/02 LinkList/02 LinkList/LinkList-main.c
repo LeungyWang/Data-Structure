@@ -21,7 +21,7 @@ int main(int argc, const char * argv[]) {
         if (ret == OK) {
             printf("\n链式结构线性表L初始化成功\n");
         }else{
-            printf("\n Test Fail!. ");
+            printf("\n链式结构线性表L初始化化失败\n");
         }
         
     }
