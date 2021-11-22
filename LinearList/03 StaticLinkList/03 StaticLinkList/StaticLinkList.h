@@ -21,5 +21,10 @@ typedef struct
 }Component, StaticLinkList[MAXSIZE];
 
 Status InitStaticLinkList(StaticLinkList space);
+Status StaticLinkListInsert(StaticLinkList L, int i, ElemType e);
+Status GetStaticLinkListElem(StaticLinkList L, int i, ElemType *e);
+Status StaticLinkListDelete(StaticLinkList L, int i);
+Status StaticLinkListIsEmpty(StaticLinkList L);
+int LocateStaticLinkListElem(StaticLinkList L, ElemType e);
 int StaticLinkListLength(StaticLinkList space);
 #endif /* StaticLinkList_h */
