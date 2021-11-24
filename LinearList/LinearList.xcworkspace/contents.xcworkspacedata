@@ -2,10 +2,13 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:02 LinkList/02 LinkList.xcodeproj">
+      location = "group:04 CircleList/04 CircleList.xcodeproj">
    </FileRef>
    <FileRef
-      location = "group:Status/Status.xcodeproj">
+      location = "group:03 StaticLinkList/03 StaticLinkList.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:02 LinkList/02 LinkList.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:01 SequenceList/01 SequenceList.xcodeproj">

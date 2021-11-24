@@ -9,7 +9,7 @@
 #define StaticLinkList_h
 
 #include <stdio.h>
-#include "../../Status/Status/Status.h"
+#include "../../../Status/Status/Status.h"
 
 #define MAXSIZE 1000    /*假设链表的最大长度是1000*/
 typedef int ElemType;
