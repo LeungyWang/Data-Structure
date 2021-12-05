@@ -18,6 +18,6 @@ typedef struct Node{
     ElemType data;
     struct Node *next;
 }Node;
-typedef struct Node *CircleList; /*定义LinkList*/
+typedef struct Node *CircleList; /*定义CircleList*/
 
 #endif /* CircleList_h */
