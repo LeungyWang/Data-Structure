@@ -72,17 +72,17 @@ Return:(int)    函数执行状态码,
 Status GetCircleListElem(CircleList L, int i, ElemType *e){
     int j;
     CircleList p;     /*声明一指针p*/
-    p = L->next;    /*让p指向链表的头结点*/
+    p = L->next;    /*让p指向链表含有元素的第一个结点*/
     j = 1;          /*j为计数器*/
-    while (p && j < i) {
+    while (p->next!=L && j < i) {
         p = p->next;
         ++j;
     }
-    if (!p) {
+    if (i > j) {
         return ERROR;   /*第i个结点不存在*/
     }
     *e = p->data;   /*取第i个结点的数据*/
-    return  OK
+    return  OK;
 }
 
 /*************************************************
@@ -101,7 +101,7 @@ int LocateCircleListElem(CircleList L, ElemType e)
     CircleList p;
     p = L->next;
     j = 0;
-    if (p==NULL) {  // 链表不存在结点
+    if (p==L) {  // 链表不存在结点
         return ERROR;
     }
     while (p!=L) {
@@ -113,4 +113,86 @@ int LocateCircleListElem(CircleList L, ElemType e)
     }
     // 链表中不存在元素e 返回ERROR
     return  ERROR;
+}
+
+/*************************************************
+Function: CircleListInsert
+Description: 在循环链表L中的第i个位置插入新元素e.
+Input:
+    (CircleList)    *L
+    (Int)           i
+    (ElemType)      e
+Return:(int)    函数执行状态码,
+          1为成功, 0为失败
+**************************************************/
+Status CircleListInsert(CircleList *L, int i, ElemType e)
+{
+    int j;
+    CircleList p,s;
+    p = *L;
+    j = 0;
+    while (p->next!=*L && j < i - 1) {    /*遍历寻找第i-1个结点*/
+        p = p->next;
+        ++j;
+    }
+    if (!p || j > i) {
+        return ERROR;  /*第i个结点不存在*/
+    }
+    s = (CircleList)malloc(sizeof(Node)); /*生成新结点(C标准函数)*/
+    s->data = e;
+    s->next = p->next;  /*将p的后继结点赋值给s的后继*/
+    p->next = s;    /*将s赋值给p的后继*/
+    return  OK;
+}
+
+/*************************************************
+Function: CircleListDelete
+Description: 删除循环链表中的第i个结点, 并用e返回其值，
+         L的长度减1.
+Input:
+    (CircleList)    *L
+    (Int)           i
+    (ElemType)      *e
+Return:(int)    函数执行状态码,
+          1为成功, 0为失败
+**************************************************/
+Status CircleListDelete(CircleList *L, int i, ElemType *e)
+{
+    int j;
+    CircleList t, q;
+    t = (*L); /*获取头结点*/
+    j = 0;
+    while (t->next!=*L && j < i - 1) {  /*遍历寻找第i-1个结点*/
+        t = t->next;
+        j++;
+    }
+    printf("i equals to %d, j equals to %d", i, j);
+    if (t->next==(*L) || j > i) {
+        return ERROR;           /*第i个结点不存在*/
+    }
+    q = t->next;
+    t->next = q->next;  /*将q的后继赋值给p的后继*/
+    *e = q->data;       /*将q结点中的数据给e*/
+    free(q);            /*让系统回收此结点, 释放内存*/
+    return OK;
+}
+
+/*************************************************
+Function: CircleListLength
+Description: 返回循环链表L中的元素个数
+Input:
+    (CircleList)    L
+Return:(int)    元素个数
+**************************************************/
+int CircleListLength(CircleList L)
+{
+    int i;
+    CircleList p;
+    p = L;
+    i = 0;
+    while (p->next!=L) {
+        i++;
+        p = p->next;
+    }
+    return i;
 }

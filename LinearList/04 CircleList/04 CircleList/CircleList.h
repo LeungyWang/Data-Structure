@@ -20,4 +20,13 @@ typedef struct Node{
 }Node;
 typedef struct Node *CircleList; /*定义CircleList*/
 
+Status InitCircleList(CircleList *L);
+Status CircleListInsert(CircleList *L, int i, ElemType e);
+Status GetCircleListElem(CircleList L, int i, ElemType *e);
+Status CircleListDelete(CircleList *L, int i, ElemType *e);
+Status ClearCircleList(CircleList *L);
+Status CircleListEmpty(CircleList L);
+int LocateCircleListElem(CircleList, ElemType e);
+int CircleListLength(CircleList L);
+
 #endif /* CircleList_h */

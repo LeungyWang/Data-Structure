@@ -42,7 +42,7 @@ int main(int argc, const char * argv[]) {
     }
     printf("\n***********02-LinkListInsert-TEST-END***********\n\n");
 
-    printf("\n***********03-GetLinkListElem-TEST-BEGIN***********\n");     // 04.函数GetLinkListElem测试
+    printf("\n***********03-GetLinkListElem-TEST-BEGIN***********\n");     // 03.函数GetLinkListElem测试
     {
         ret = GetLinkListElem(L, i, &e);
         if (ret == ERROR) {
