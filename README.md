@@ -1,7 +1,7 @@
 <!--
  * @Author: leung
  * @Date: 2021-10-17 17:47:27
- * @LastEditTime: 2021-11-24 13:39:55
+ * @LastEditTime: 2022-01-05 13:06:35
  * @LastEditors: leung
  * @Description: 
 -->
@@ -69,3 +69,11 @@ endADT
 
 循环链表示意图:
 ![CircularLinkedList](https://only0322.github.io/images/NodeList/CirCle.png)
+
+
+### 双向链表
+**定义**
+> 双向链表(double linked list)是在单链表的每个结点中，再设置一个指向其前驱结点的指针域。在双向链表中的结点都有两个指针域，一个指向直接后继，另一个指向直接前驱。
+
+双向链表示意图：
+![DoubleLinkedList](https://static.oschina.net/uploads/space/2018/0321/220155_K8vT_1159632.jpeg)
